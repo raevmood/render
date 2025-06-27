@@ -28,6 +28,8 @@ def load_system_prompt():
             return f.read()
     except FileNotFoundError:
         return None
+    if system_prompt is None:
+        raise RuntimeError("Missing system_prompt.md file!")
 
 
 system_prompt = load_system_prompt()
