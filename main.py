@@ -49,5 +49,5 @@ async def chat(request: ChatRequest):
     return ChatResponse(response=response_text)
 
 @app.get("/")
-async def root():
+def root():
     return {"message": "API is running"}
