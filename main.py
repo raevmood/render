@@ -18,6 +18,10 @@ app.add_middleware(
     allow_headers=["*"],
     )
 
+@app.get("/")
+def root():
+    return {"message": "API is running"}
+
 def load_system_prompt():
     try:
         with open("system_prompt.md", "r") as f:
@@ -48,6 +52,3 @@ async def chat(request: ChatRequest):
     response_text = ai_platform.chat(request.prompt)
     return ChatResponse(response=response_text)
 
-@app.get("/")
-def root():
-    return {"message": "API is running"}
