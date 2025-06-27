@@ -1,8 +1,8 @@
 import os
 from fastapi import Depends, FastAPI
 from pydantic import BaseModel
-from app.gemini import Gemini
-from app.throttling import apply_rate_limit
+from gemini import Gemini
+from throttling import apply_rate_limit
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
